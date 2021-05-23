@@ -1,0 +1,26 @@
+{% extends "bootstrap/base.html" %}
+
+{%  block content %}
+
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-3">Analyze Data From CSV file App</h1>
+        <p>Get details of data from csv file</p>
+        <p><a href="{{ url_for('index') }}" type="button" class="btn btn-primary"> Refresh </a></p>
+    </div>
+    <div class="container">
+        <form method="POST" class="form-group" enctype=multipart/form-data action="{{ url_for('datauploads') }}">
+            <input type="file" name="csv_data">
+            <input type="submit" class="btn btn-primary mb-2">
+            <input type="reset" value="Reset" class="btn btn-danger mv-2">
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+{{ super() }}
+
+{% endblock%}
